@@ -1,0 +1,82 @@
+body {
+  perspective: 1000px;
+  background-color: #bed9fa;
+}
+
+.container {
+  transform: rotateX(-30deg);
+  transform-style: preserve-3d;
+}
+
+.cubo {
+  height: 200px;
+  width: 200px;
+  margin: 100px auto;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+}
+
+.face {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border: 2px solid #0f0f0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frente {
+  background-color: #30372f;
+  transform: rotateY(0deg) translateZ(100px);
+}
+
+.tras {
+  background-color: #396744;
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.direita {
+  background-color: #4a9658;
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.esquerda {
+  background-color: #349543;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cima {
+  background-color: #2be050;
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.baixo {
+  background-color: #d24179;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.sombra {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: rotateX(-90deg) translateZ(200px);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
